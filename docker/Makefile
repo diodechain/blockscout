@@ -88,10 +88,11 @@ endif
 
 start: build postgres 
 	@echo "==> Starting blockscout"
-	@docker run --rm --name $(BS_CONTAINER_NAME) \
+	@echo "==> ARGS $(BLOCKSCOUT_CONTAINNER_PARAMS)"
+	@docker run -ti --rm --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINNER_PARAMS) \
 					-p 4000:4000 \
-					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
+					$(DOCKER_IMAGE) /bin/sh -c "iex -S mix phx.server"
 
 run: start
 

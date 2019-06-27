@@ -57,3 +57,8 @@ config :logger, :error,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
+
+# Import network specific configuration
+if System.get_env("NETWORK_CONFIG") != nil do
+  import_config "#{System.get_env("NETWORK_CONFIG")}.exs"
+end
