@@ -27,3 +27,5 @@ config :block_scout_web, BlockScoutWeb.SocialMedia,
   twitter: "diode_chain",
   telegram: "diode_chain"
 
+config :block_scout_web, BlockScoutWeb.Endpoint,
+  secret_key_base: "RMgI4C1HSkxsEjdhtGMfwAHfyT6CKWXOgzCboJflfSm4jeAlic52io05KB6mqzc5"

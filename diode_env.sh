@@ -10,7 +10,7 @@ export PORT=4000
 export COIN=DIODE
 export HOST=localhost
 export DATABASE_URL="postgresql://postgres:@${HOST}:5432/explorer?ssl=false"
-export ETHEREUM_JSONRPC_VARIANT=rsk
+export ETHEREUM_JSONRPC_VARIANT=parity
 export ETHEREUM_JSONRPC_HTTP_URL=http://localhost:8545
 export ETHEREUM_JSONRPC_TRACE_URL=http://localhost:8545
 export ETHEREUM_JSONRPC_WS_URL=ws://localhost:8545/ws
