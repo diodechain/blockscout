@@ -80,7 +80,7 @@ else
 endif
 else
 	@echo "==> Creating new PostgreSQL container"
-	@docker run -d --name $(PG_CONTAINER_NAME) \
+	@docker run -d --restart always --name $(PG_CONTAINER_NAME) \
 					-e POSTGRES_PASSWORD="" \
 					-e POSTGRES_USER="postgres" \
 					-p 5432:5432 \
@@ -92,7 +92,7 @@ endif
 start: build postgres 
 	@echo "==> Starting blockscout"
 	@echo "==> ARGS $(BLOCKSCOUT_CONTAINNER_PARAMS)"
-	@docker run -ti --rm --name $(BS_CONTAINER_NAME) \
+	@docker run -d --restart always --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINNER_PARAMS) \
 					-p 4000:4000 \
 					$(DOCKER_IMAGE) /bin/sh -c "iex -S mix phx.server"
